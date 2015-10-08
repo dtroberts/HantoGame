@@ -1,0 +1,53 @@
+This code was developed by Devin Roberts for CS 4233 - Object-Oriented Analysis and Design. There is no runnable GUI; the code is implemented via tests.
+
+
+Description of Hanto Variants
+
+Alpha Hanto
+--------------
+X Blue must go first
+X Blue moves Butterfly to (0,0)
+X Red moves Butterfly adjacent to Blue's
+X Red cannot move to a space not adjacent to Blue's 
+X Ends in a draw
+
+Beta Hanto
+--------------
+X Can place Sparrow and Butterfly on the board
+X Red can go first
+X Each player starts with one Butterfly and five Sparrows
+X Pieces may be placed anywhere as long as they are adjacent to another
+X First piece is always placed at (0,0)
+X Butterfly must be placed within the first four turns
+X Win if opponent's butterfly is surrounded 
+
+Gamma Hanto
+-------------
+X Butterfly can move one hex each turn
+	X Other pieces cannot move
+	X Cannot move more than one space
+X Game ends in a draw if the game goes on after 10 turns
+
+Delta Hanto
+-------------
+X No moves can be made until the butterfly is placed
+X Sparrow can Fly
+	X Butterfly and Crab may still only Walk
+X A player can resign at any point if they choose
+	X resign = makeMove(null,null,null)
+	- If a player cannot make a valid move or place a piece on the board, they must resign
+X Walking pieces locked in place cannot move
+	X Flying pieces can
+X Rework for placing pieces
+	X Only next to pieces of the same color
+X Fix surround calculation
+	X (0,1), (-1,0), (-1,1) 
+	
+Tournament Player
+-----------------
+X Can create a player
+	X Instantiates its own DeltaHantoGame
+X Store other player's moves on board
+X Make valid moves
+	X If no valid moves exist, resign
+X Resigns if no moves are available
